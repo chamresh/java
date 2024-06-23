@@ -1,0 +1,1266 @@
+Java lab:
+Q1.Total Expenses for the Event
+the prime functionality of an Event Management System is budgeting.
+An Event Management System should estimate the total expenses incurred by an event and the percentage rate of each of the expenses involved in planning and executing an event.
+Nikhil, the founder of "Pine Tree" wanted to include this functionality in his company’s Amphi Event Management System and requested your help in writing a program for the same.
+The program should get the branding expenses, travel expenses, food expenses and logistics expenses as input from the user and calculate the total expenses for an event and the percentage rate of each of these expenses.
+Input Format
+First input is a double value that corresponds to the branding expenses.
+Second input is a double value that corresponds to the travel expenses.
+Third input is a double value that corresponds to the food expenses.
+Fourth input is a double value that corresponds to the logistics expenses.
+Output Format
+First line of the output should display the double value that corresponds to the total expenses for the Event.
+Next four lines should display the percentage rate of each of the expenses.
+Round off the output to two decimal digits.
+Test Case :
+Input:
+20000
+40000
+15000
+25000
+Output:
+Total expenses : Rs.100000.00
+Branding expenses percentage : 20.00%
+Travel expenses percentage : 40.00%
+Food expenses percentage : 15.00%
+Logistics expenses percentage : 25.00%
+Input:
+20000
+40000
+15000
+25000
+Output:
+Total expenses : Rs.100000.00
+Branding expenses percentage : 20.00%
+Travel expenses percentage : 40.00%
+Food expenses percentage : 15.00%
+Logistics expenses percentage : 25.00%
+import java.util.Scanner;
+class main
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+    
+        double brandingExpenses = scanner.nextDouble();
+        double travelExpenses = scanner.nextDouble();
+        double foodExpenses = scanner.nextDouble();
+        double logisticsExpenses = scanner.nextDouble();
+        
+        double totalExpenses = brandingExpenses + travelExpenses + foodExpenses + logisticsExpenses;
+        
+        double brandingPercentage = (brandingExpenses / totalExpenses) * 100;
+        double travelPercentage = (travelExpenses / totalExpenses) * 100;
+        double foodPercentage = (foodExpenses / totalExpenses) * 100;
+        double logisticsPercentage = (logisticsExpenses / totalExpenses) * 100;
+        
+        // Display results
+        System.out.println("\nTotal Expenses for the Event: $" + totalExpenses);
+        System.out.println("Branding Expenses Percentage: " + brandingPercentage + "%");
+        System.out.println("Travel Expenses Percentage: " + travelPercentage + "%");
+        System.out.println("Food Expenses Percentage: " + foodPercentage + "%");
+        System.out.println("Logistics Expenses Percentage: " + logisticsPercentage + "%");
+        
+    }
+}
+
+Q2.Event Details
+Be it a last-minute get-together, a birthday party or a corporate event, the "Pine Tree" Event Management Company helps you plan and execute it better and faster.
+Nikhil, the founder of the company wanted the Examly Event Management System to get and display the event details from his Customers for every new order of the Company.
+Write a program that will get the input of the event details like name of the event, type of the event, number of people expected,
+a string value (Y/N) telling whether the event is going to be a paid entry and the projected expenses (in lakhs) for the event.
+The program should then display the input values as formatted output.
+Question Instructions:
+Create a driver class named Main.
+The solution code should be written inside the main method() of the Main class
+Input Format
+First input is a string that corresponds to the name of the event.
+Second input is a string that corresponds to the type of the event.
+Third input is an integer that corresponds to the number of people expected for the event.
+Fourth input is a character that corresponds to Y/N telling whether the event is going to be a paid entry or not.
+Fifth input is a double value that corresponds to the projected expenses (in lakhs) for the event.
+Output Format
+Output should display the event details.
+Refer sample input and output for formatting specifications
+test cases :
+Sample 1 Input
+food fest 2017
+public
+500
+Y
+5.8
+Sample 1 Output
+Event Name : food fest 2017
+Event Type : public
+Expected Count : 500
+Paid Entry : Y
+Projected Expense : 5.8L
+
+import java.util.*;
+import java.io.*;
+class Eventdetails {
+	public static void main(String[] args) {
+		String name,type;
+		double expenses;
+		int number;
+		char entry;
+		Scanner sc = new Scanner(System.in);
+		name = sc.nextLine();
+		type = sc.nextLine();
+		number = sc.nextInt();
+		entry = sc.next().charAt(0);
+		expenses = sc.nextDouble();
+		System.out.println("Event Name : "+name);
+		System.out.println("Event Type : "+type);
+		System.out.println("Expected Count : "+number);
+		System.out.println("Paid Entry : "+entry);
+		System.out.println("Projected Expense : "+expenses+"L");
+	}
+}
+
+
+
+Q3.Find the total customers
+Jeevan is running a sports club.
+He already had N number of customers and due to the offer that he declared yesterday a lot of new members have joined the club today.
+Your task here is to write a program to find the total number of customers that he has.
+Question Instructions:
+Create a driver class named Main.
+The solution code should be written inside the main method() of the Main class
+Input Format
+N1 denotes the customers that he already has N2 denotes the customer added today separated by a space.
+Output Format
+The output prints the total number of customers that Jeevan has.
+Constraints
+Integers only.
+test cases:
+Sample 1 Input
+10 11
+Sample 1 Output
+21
+
+import java.util.Scanner;
+class Main
+{
+  public static void main(String[] args)
+  {
+  int a,b,c;
+  Scanner sc=new Scanner(System.in);
+  a=sc.nextInt();
+  b=sc.nextInt();
+  c=a+b;
+    System.out.print(c);
+  }
+}
+
+Q4.
+The Acme Tennis Ball Company is designing a new box to ship its products.
+The marketing department wants a triangular box that can hold 4 balls, as in the illustration below.
+The balls fit exactly inside the box, just touching all three walls and the end caps of the container.
+All 3 walls of the box are the same size (equilateral triangle). Assume a tennis ball is 6 cm in diameter, and ignore the thickness of the box material.
+What will be the length and breadth of the material used to make the box? Write a program that finds the measure of a side of the box.
+Program must also display the length and breadth of the material used to make the triangular box.
+The formula to be applied for the above problem is:
+side = sqrt(3)*diameter
+length = side*3
+breadth = 4*diameter
+Input Format
+The input consists of the diameter of the box.
+Output Format
+The output displays the side of the box, length and breadth of the material used to make the triangular box separated by a space.
+Round off the float values to two decimal places.
+test cases :
+Sample 1 Input
+6
+Sample 1 Output
+Side : 10.39
+Length : 31.18
+Breadth : 24.00
+
+import java.util.*;
+import java.math.*;
+class main
+{
+ public static void main(String args[])
+ {
+ Scanner t=new Scanner(System.in);
+ int n=t.nextInt();
+ float side=(float)Math.sqrt(3)*n;
+ float length=side*3;
+ float breadth=4*n;
+ System.out.printf("Side : "+"%.2f",side);
+ System.out.println();
+ System.out.printf("Length : "+"%.2f",length);
+ System.out.println();
+ System.out.printf("Breadth : "+"%.2f",breadth);
+ System.out.println();
+ }
+}
+Q5.Grades of Rides 
+“AquaticaCarnival” is the most successful event dedicated to children and families.
+The Event has more than 20 rides for children and adults and the organizers always ensure not to compromise on the safety of the visitors.
+To ensure the safety of the rides, the organizers have graded the rides in the fair according to the following conditions:
+Hurl Factor must be greater than 50.
+Spin Factor must be greater than 60.
+Speed factor must be greater than 100.
+The grades are as follows:
+Grade is 10 if all three conditions are met.
+Grade is 9 if conditions (i) and (ii) are met.
+Grade is 8 if conditions (ii) and (iii) are met.
+Grade is 7 if conditions (i) and (iii) are met.
+Garde is 6 if only one condition is met.
+Grade is 5 if none of three conditions are met.
+Write a program display the grade of the rides, given the values of hurl factor, spin factor and speed factor of the ride under consideration.
+Input Format
+First line of the input consists of 3 integers that gives the Hurl Factor, Spin Factor and Speed Factor of the ride, each separated by a space.
+Output Format
+Output should display the grade of the ride depending on Conditions.
+test cases :
+Sample 1 Input
+51 89 150
+Sample 1 Output
+10
+Sample 2 Input
+45 69 102
+Sample 2 Output
+8
+
+import java.io.*;
+import java.util.*;
+class Gradesofrides {
+	public static void main(String [] args) {
+		int hurl,spin,speed;
+		Scanner sc = new Scanner(System.in);
+		hurl = sc.nextInt();
+		spin = sc.nextInt();
+		speed = sc.nextInt();
+		if(hurl > 50 && spin>60 && speed>100) {
+			System.out.println("10");
+		}
+		else if(hurl>50 && spin>60) {
+			System.out.println("9");
+		}
+		else if(spin>60 && speed>100) {
+			System.out.println("8");
+		}
+		else if(hurl>50 && speed>100) {
+			System.out.println("7");
+		}
+		else if(hurl>50 || spin>60 || speed>100) {
+			System.out.println("6");
+		}
+		else {
+			System.out.println("5");
+		}
+	}
+}
+Q6.Triangle Game 
+The Westland Game Fair is the premier event of its kind for kids interested in some intellectual and cognitive brain games.
+Exciting games were organized for kids between age group of 8 and 10.
+One such game was called the "Triangle game", where different number boards in the range 1 to 180 are available.
+Each kid needs to select three number boards, where the numbers on the boards correspond to the angles of a triangle. 
+If the angles selected by a kid forms a triangle, he/she would receive Prize 1.
+If the angles selected by a kid forms a right triangle, he/she would receive Prize 2.
+If the angles selected by the kids form an equilateral triangle, he/she would receive Prize 3.
+If the angles selected by a kid do not form even a triangle, then he/she will not receive any prizes.
+Write a program for the organizers to fetch the result based on the number boards selected by the kids.
+Input Format
+There are 3 lines in the input, each of which corresponds to the numbers on the boards that the kids select.
+Output Format
+Output should display "Prize 1" or "Prize 2" or "Prize 3" or "No prize" based on the conditions given.
+test cases :
+Sample 1 Input
+60
+50
+70
+Sample 1 Output
+Prize 1
+Sample 2 Input
+60
+60
+70
+Sample 2 Output
+No prize
+import java.util.*;
+import java.io.*;
+class Trianglegame {
+	public static void main(String [] args) {
+		int angle1,angle2,angle3;
+		Scanner sc = new Scanner(System.in);
+		angle1 = sc.nextInt();
+		angle2 = sc.nextInt();
+		angle3 = sc.nextInt();
+		if((angle1+angle2+angle3) == 180) {
+		if(angle1 == angle2 && angle2 == angle3 && angle1 == angle3) {
+			System.out.println("Prize 3");
+		}
+		else if(angle1 == 90 || angle2 ==90 || angle3 == 90) {	
+			System.out.println("Prize 2");
+		}
+		else {
+			System.out.println("Prize 1");
+		}
+			
+		}
+		else {
+			System.out.println("No prize");
+		}
+	}
+}
+Q7.
+Janu wants to write a java program to print the number of occurrences of a particular prime number from the list of all prime factors of every number between the given limits.
+Suppose the given limits are 2 and 8.
+The numbers between this limit is
+2
+3
+4
+5
+6
+7
+8
+The list of all prime factors of the above numbers are
+2
+3
+2,2
+5
+2,3
+7
+2,2,2
+Now if the particular prime number is 3 then you should print the number of occurrences as 2
+Input Format
+First line will contain the left limit ,L.
+Second line will contain the right limit ,R.
+Then the following line has the prime number ,P.
+Output Format
+Print the count of occurrences of a prime number in the prime factorization of every element from the given range.
+Constraints
+1 <= L <= 200
+L <= R <= 200
+L <= P <= R
+Sample 1 Input
+2
+8
+3
+Sample 1 Output
+2
+Sample 2 Input
+22
+45
+5
+Sample 2 Output
+6
+Sample 3 Input
+2
+34
+6
+Sample 3 Output
+6 is not a prime number.
+import java.util.*;
+class main
+{
+    public static void main(String args[])
+    {
+        Scanner t=new Scanner(System.in);
+        int l=t.nextInt();
+        int r=t.nextInt();
+        int p=t.nextInt();
+        int x=0;
+        for(int i=1;i<=p;i++)
+        {
+            if(p%i==0)
+            {
+                x++;
+            }
+        }
+        int co=0;
+        if(x==2)
+        {
+            for(int i=l;i<=r;i++)
+            {
+                int num=i;
+                while(num%p==0)
+                {
+                    co++;
+                    num=num/p;
+                }
+            }
+            System.out.println(co);
+        }
+        else
+        {
+            System.out.println(p+" is not a prime number.");
+        }
+    }
+}
+
+				Or						
+import java.util.*;
+ class Main
+{
+	public static void main(String[] args) {
+	     Scanner s=new Scanner(System.in);
+	     int l=s.nextInt();
+	     int r=s.nextInt();
+	     int p=s.nextInt(); 
+	     int i = 2;
+        boolean flag = false;
+        while(i <= p/2)
+        {
+            // condition for nonprime number
+            if(p % i == 0)
+            {
+                flag = true;
+                break;
+            }
+            ++i;
+        }
+        if (!flag)
+            System.out.println(getCount(l, r, p)); 
+        else
+            System.out.println(p + " is not a prime number.");
+
+	     
+	}
+private static int countFactors(int n, int p) 
+{ 
+    int pwr = 0; 
+    while (n > 0 && n % p == 0) { 
+        n /= p; 
+        pwr++; 
+    } 
+    return pwr; 
+} 
+  
+private static int getCount(int l, int r, int p) 
+{ 
+    int cnt = 0;
+    for (int i = l; i <= r; i++) { 
+        cnt += countFactors(i, p); 
+    } 
+    return cnt; 
+} 
+}
+Q8.
+Write a program to find sum of all natural numbers between 1 to n
+Input Format
+Input to get limit n.
+Output Format
+Display the sum of natural number
+Constraints
+n (integer type).
+Sample 1 Input
+6
+Sample 1 Output
+Sum of Numbers :21
+import java.util.Scanner;
+class Sum_Numbers
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		int l =input.nextInt();
+		int sum = 0;
+		for(int s=1;s<=l;s++)
+		{
+			sum = sum + s;
+ 
+		}
+		System.out.println("Sum of Numbers :"+sum);
+	}
+}
+Q9.
+Problem statement
+
+Write a program to print x pattern of the given odd length string. It should contain two methods namely main and pattern. The main method should pass the inputs to the pattern.
+
+Refer sample output for formatting specifications.
+
+Input Format
+Input to get a string s.
+
+Output Format
+Display the pattern as shown in the sample output.
+
+Constraints
+S (odd length string).
+
+Sample 1 Input
+omega
+Sample 1 Output
+o   a
+ m g 
+  e  
+ m g 
+o   a
+Sample 2 Input
+crunchy
+Sample 2 Output
+c     y
+ r   h 
+  u c  
+   n   
+  u c  
+ r   h 
+c     y
+import java.util.Scanner;
+class Main
+{ 
+static void pattern(String str, int n) 
+{ 
+    for (int i = 0; i < n; i++) 
+    { 
+        int j = n - 1 - i; 
+        for (int k = 0; k < n; k++) 
+        { 
+            if (k == i || k == j) 
+                System.out.print(str.charAt(k)); 
+            else
+                System.out.print(" "); 
+        } 
+        System.out.println(""); 
+    } 
+} 
+public static void main (String[] args) 
+{ 
+    String str; 
+    Scanner in=new Scanner(System.in);
+    str=in.nextLine();
+    int len = str.length(); 
+    pattern(str, len); 
+  
+} 
+}
+				Or
+import java.util.*;
+class Main
+{
+ public static void main(String[] args)
+ {
+ String a;
+ Scanner s=new Scanner(System.in);
+ a=s.next();
+ int x=0,y=a.length();
+ for(int i=0;i<a.length();i++)
+ {
+ for(int j=0;j<a.length();j++)
+ {
+ if(j==x||j==y-1)
+ {
+ System.out.print(a.charAt(j));
+ }
+ else
+ {
+ System.out.print(" ");
+ }
+ }
+ System.out.println();
+ x++;
+ y--;
+ }
+ }
+}
+
+Q10.Problem statement
+Deepa was ready to make a sketch for a rangoli, In her design, there is a square inscribed in her square.
+The edges of the inner square meet the center point of the sides of the outer circle.
+She knows only about the number of points needed to draw one side of the inner square.
+Write a program to help her draw the sketch.
+Input Format
+Input consists of the number of points needed to plot one side of the inner square.
+Output Format
+Output is the pattern of a square inscribed inside a square.
+In which the edges of the inscribed square meet the center point of sides of the outer square.
+Sample 1 Input
+5
+Sample 1 Output
+*  *  *  *  *  *  *  *  *  
+*  *  *  *     *  *  *  *  
+*  *  *           *  *  *  
+*  *                 *  *  
+*                       *  
+*  *                 *  *  
+*  *  *           *  *  *  
+*  *  *  *     *  *  *  *  
+*  *  *  *  *  *  *  *  *  
+Sample 2 Input
+9
+Sample 2 Output
+*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
+*  *  *  *  *  *  *  *     *  *  *  *  *  *  *  *  
+*  *  *  *  *  *  *           *  *  *  *  *  *  *  
+*  *  *  *  *  *                 *  *  *  *  *  *  
+*  *  *  *  *                       *  *  *  *  *  
+*  *  *  *                             *  *  *  *  
+*  *  *                                   *  *  *  
+*  *                                         *  *  
+*                                               *  
+*  *                                         *  *  
+*  *  *                                   *  *  *  
+*  *  *  *                             *  *  *  *  
+*  *  *  *  *                       *  *  *  *  *  
+*  *  *  *  *  *                 *  *  *  *  *  *  
+*  *  *  *  *  *  *           *  *  *  *  *  *  *  
+*  *  *  *  *  *  *  *     *  *  *  *  *  *  *  *  
+*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
+
+
+import java.util.*;
+class Main
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        int rows=sc.nextInt();
+        int i,j,col=(rows*2)-1;
+        for(i=rows;i>=1;i--)
+        {
+            for(j=1;j<=col;j++)
+            {
+                if(j<=i){
+                System.out.print("* ");}
+                else if(j>col-i){
+                System.out.print("* ");}
+                else {System.out.print("  ");}
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+        for(i=2;i<=rows;i++)
+        {
+            for(j=1;j<=col;j++)
+            {
+                if(j<=i){
+                System.out.print("* ");}
+                else if(j>col-i){
+                System.out.print("* ");}
+                else {System.out.print("  ");}
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+
+Q11.
+A common problem in statistics is that of generating frequency distribution of the given data.
+Assuming that the data consists of n positive integers in the range 1 to 25, write a program that prints the number of times each integer occurs in the data.
+Input Format
+The first line of the input consists of the value of n.
+The next n inputs are the array elements.
+Output Format
+The output prints the frequency of each data.
+Sample 1 Input
+Sample 1 Output
+8
+10 20 20 10 10 20 5 20
+10 3
+20 4
+Sample 2 Input
+15
+2 4 8 6 2 4 6 8 8 8 10 12 10 10 12
+Sample 2 Output
+2 2
+4 2
+8 4
+6 2
+10 3
+12 2
+5 1
+import java.util.*;
+class main
+{
+   public static void main(String args[])
+   {
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       boolean b[]=new boolean[n];
+       int []a=new int[n];
+       for(int i=0;i<n;i++)
+       {
+           a[i]=sc.nextInt();
+       }
+       for(int i=0;i<n;i++)
+       {
+           if(b[i]==true)
+           continue;
+           int count=1;
+           for(int j=i+1;j<n;j++)
+           {
+               if(a[i]==a[j])
+               {
+                   b[j]=true;
+                   count++;
+               }
+           }
+           System.out.println(a[i]+" "+count);
+       }
+   }
+}
+					Or							
+
+import java.util.Arrays;
+import java.util.Scanner;
+class Test
+{
+public static void countFreq(int arr[], int n)
+{
+	boolean visited[] = new boolean[n];
+	
+	Arrays.fill(visited, false);
+	for (int i = 0; i < n; i++) {
+		if (visited[i] == true)
+			continue;
+		int count = 1;
+		for (int j = i + 1; j < n; j++) {
+			if (arr[i] == arr[j]) {
+				visited[j] = true;
+				count++;
+			}
+		}
+		System.out.println(arr[i] + " " + count);
+	}
+}
+public static void main(String []args)
+{
+	int i,n;
+	Scanner sc = new Scanner(System.in);
+	n = sc.nextInt();
+	int [] arr = new int[n];
+	for(i=0;i<n;i++) {
+	    arr[i] = sc.nextInt();
+	}
+	countFreq(arr, n);
+}
+}
+Q12.
+Youngest and Oldest
+The Pan Am 73 flight from Bombay to New York en route Karachi and Frankfurt was hijacked by a few Palestinian terrorists at the Karachi International Airport.
+The senior flight purser Neerja Banhot had to wither her fear and start evacuating the passengers on board.
+She pleaded the hijackers to release the oldest and the youngest person in the aircraft.
+Heeding to her plea the chief of the hijacker agreed to let go the oldest and the youngest.
+Given the ages of the passengers find the oldest and the youngest.
+Input Format
+The first line of input consists of an integer n, corresponding to the number of passengers in the aircraft.
+The next line consists of the age of passengers separated by a space.
+Output Format
+The output prints the youngest and oldest separated by a space.
+Print Invalid Input if n or any one of the ages is negative.
+Sample 1 Input
+5
+1 3 5 2 4
+Sample 1 Output
+1 5
+Sample 2 Input
+-6
+Sample 2 Output
+Invalid Input
+Sample 3 Input
+6
+68 -45
+Sample 3 Output
+Invalid Input
+// You are using Java
+import java.util.*;
+class main
+{
+    public static void main(String args[])
+    {
+        Scanner t=new Scanner(System.in);
+        int n=t.nextInt();
+        int max,min;
+        if(n>0)
+        {
+            int a[]=new int[n];
+            for(int s=0;s<n;s++)
+            {
+                a[s]=t.nextInt();
+                if(a[s]<0)
+                {
+                    System.out.println("Invalid Input");
+                    return;
+                }
+            }
+            min= a[0];
+            for(int s=0;s<n;s++)
+            {
+                if(a[s]<min)
+                {
+                    min=a[s];
+                }
+            }
+            System.out.print(min+" ");
+            max=a[0];
+            for(int s=0;s<n;s++)
+            {
+                if(a[s]>max)
+                {
+                    max=a[s];
+                }
+            }
+            System.out.println(max);
+        }
+        else
+        {
+            System.out.println("Invalid Input");
+        }
+    }
+}
+Q13.
+Johnsy wants to create a matrix in which the elements are formed differently.
+The elements are formed by adding the values of their index positions.
+Write a program that obtains the order of the matrices and creates a matrix by adding the values of their index positions.
+Input Format
+The input line consists of the order of the matrices m and n separated by a space.
+Output Format
+The output prints the matrix elements in matrix format.
+The elements are formed by adding the values of their index positions.
+Give a tab space between the elements.
+Refer sample input and output for formatting specifications.
+Sample 1 Input
+3 3
+Sample 1 Output
+0	1	2	
+1	2	3	
+2	3	4
+
+import java.util.*;
+class main{
+ public static void main(String args[])
+ {
+ Scanner s= new Scanner(System.in);
+ int n=s.nextInt();
+ int m=s.nextInt();
+ for(int i=0;i<n;i++)
+ {
+ for(int j=0;j<n;j++)
+ {
+ System.out.print(i+j);
+ System.out.print("\t");
+ }
+ System.out.print("\n");
+ }
+ 
+ }
+
+
+Q14.
+Valid Initial Configuration
+Nurikabe logical game (sometimes called Islands in the Stream) is a binary determination puzzle.
+The puzzle is played on a typically rectangular grid of cells, some of which contain numbers.
+You must decide for each cell if it is white or black (by clicking on them) according to the following rules:
+·    All of the black cells must be connected.
+·    Each numbered cell must be part of a white island of connected white cells.
+·    Each island must have the same number of white cells as the number it contains (including the numbered cell).
+·    Two islands may not be connected.
+·    There cannot be any 2x2 blocks of black cells.
+Unnumbered cells start out grey and cycle through white and black when clicked. Initially numbered cells are white in color.
+Problem Statement:
+Write a program to check whether the given board configuration is a valid initial configuration.
+Below figure is the sample valid initial configuration.
+Input Format
+First line of the input is an integer N that gives the number of rows and columns of the grid.
+Next N lines will have the board configuration with N*N cells.
+Assume that the maximum number in a cell can be 10.
+Grey colored cells are represented by the integer 20 in the matrix representation of the input configuration.
+Output Format
+Output "Yes" (without quotes) if the given configuration is a valid initial configuration. Print "No" otherwise (without quotes).
+Refer sample input and output for formatting specifications.
+Sample 1 Input
+5
+20 20 1 20 3
+20 20 20 20 20
+20 20 20 20 20
+20 20 20 20 20
+6 20 3 20 20
+Sample 1 Output
+Yes
+Sample 2 Input
+5
+20 20 1 20 3
+20 20 20 20 20
+20 20 12 20 20
+20 20 20 20 20
+6 20 3 20 20
+Sample 2 Output
+No
+
+import java.io.*;
+import java.util.*;
+class validInitialConfiguration {
+	public static void main(String [] args) {
+		int i,j,n,s=1;
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		int a[][] = new int[n][n];
+		for(i=0;i<n;i++) {
+			for(j=0;j<n;j++) {
+				a[i][j] = sc.nextInt();
+			}
+		}
+	    for(i=0;i<n;i++)
+	    {
+	        for(j=0;j<n;j++)
+	        {
+	            if((a[i][j]!=20)&&(a[i][j]>10)) { 
+	            	s=0;
+	            	}
+	        }
+	    }
+	    if(s == 0) {
+	    	System.out.println("No");
+	    }
+	    else {
+	    	System.out.println("Yes");
+	    }
+
+	}
+}
+
+Q15.Count Uppercase and Lowercase Letters
+Obtain a String and write it into a file.
+Read the file contents and print the number of uppercase and lower case letters present in the file.
+Question Instructions:
+The solution code should have its class name as CountLetters
+The main logic for the solution should be written inside CountLetters class
+Input Format
+The input consists of a String.
+Output Format
+The output print the number of upper case and lower case letters.
+Refer to the sample output for formatting specifications.
+Sample 1 Input
+Welcome to PS!!!
+Sample 1 Output
+3
+8
+
+import java.io.*;
+import java.util.*;
+class Sample {
+ public static void main(String args[]) throws Exception{
+ FileWriter w=new FileWriter("sp.txt");
+Scanner t=new Scanner(System.in);
+String a=t.nextLine();
+w.write(a);
+w.close();
+FileReader r=new FileReader("sp.txt");
+int i;
+int c=0,d=0;
+while((i=r.read())!=-1) {
+if(Character.isLowerCase((char)i))
+c++;
+if(Character.isUpperCase((char)i))
+d++; }
+r.close();
+System.out.println(d+"\n"+c);
+ } 
+}
+						Or						
+import java.io.*;
+import java.util.*;
+class Sample {
+   public static void main(String args[]) throws Exception{
+        Scanner sc=new Scanner(System.in);
+        FileWriter fw=new FileWriter("output.txt"); 
+        
+        String ch;
+        int upper=0,lower=0,number=0,special=0;
+          
+        String s=sc.nextLine();
+        
+          fw.write(s);
+          fw.close();
+          
+          FileReader fr=null; 
+            try
+            { 
+                fr = new FileReader("output.txt"); 
+            } 
+            catch (FileNotFoundException fe) 
+            { 
+                System.out.println("File not found"); 
+            } 
+            
+            Integer i=fr.read();
+            Integer eof=-1;
+          ch=i.toString();
+          while (ch.charAt(0)!=eof.toString().charAt(0))  { 
+               
+            if (Integer.parseInt(ch) >= 'A' && Integer.parseInt(ch) <= 'Z')
+                upper++;
+            else if (Integer.parseInt(ch) >= 'a' && Integer.parseInt(ch) <= 'z')
+                lower++;
+            
+            i=fr.read();
+            ch=i.toString();
+            }
+     
+     
+      System.out.println(upper);
+      System.out.println(lower);
+
+   }
+}
+Q16.
+The minimum element in an array
+Obtain an array and write it into a file. Read the file contents and print the minimum element in the array.
+Question Instructions:
+The solution code should have its class name as MinElement
+The main logic for the solution should be written inside MinElement class
+Input Format
+The first line consists of the value of n.
+The next input is the array elements.
+Output Format
+The output prints the minimum element in the array.
+Sample 1 Input
+5
+84 52 12 35 96
+Sample 1 Output
+12
+Sample 2 Input
+8
+12 45 78 23 56 89 96 8
+Sample 2 Output
+8
+
+import java.io.*;
+import java.util.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter; 
+import java.io.IOException; 
+ class CreateFile 
+{ 
+ public static void main(String[] args) throws IOException 
+ { 
+ FileWriter w=new FileWriter("sp.txt");
+Scanner t=new Scanner(System.in);
+int a=t.nextInt();
+int arr[]=new int[a];
+for(int i=0;i<a;i++)
+{
+arr[i]=t.nextInt();
+w.write(arr[i]);
+}
+w.close();
+FileReader r=new FileReader("sp.txt");
+int i;
+int min=r.read();
+while((i=r.read())!=-1)
+{
+if(min>i)
+min=i;
+}
+System.out.println(min);
+r.close();
+ }
+}
+
+
+Q17.Problem statement:
+Write a Java program to extract the date, and time from the date string.
+Input Format
+The input consists of a string and the format for the date and time is, YYYY-MM-DD Time:Hours: Minutes
+Example : 2016-07-14 09:00:02
+Output Format
+The output prints the extract form of Date and Time. The format is MM/DD/YYYY Time: Hours: Minutes.
+Sample 1 Input
+2016-07-14 09:00:02
+Sample 1 Output
+07/14/2016, 9:00:02
+Sample 2 Input
+2019-03-14 03:00:05
+Sample 2 Output
+03/14/2019, 3:00:05
+
+import java.util.*;
+import java.text.*;
+
+class Main
+{
+  public static void main(String[] args)
+   {
+        try 
+        {
+            String str;
+            //= "2016-07-14 09:00:02";
+            Scanner  s= new Scanner(System.in);
+            str=s.nextLine();
+            Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(str);
+            String newstr = new SimpleDateFormat("MM/dd/yyyy, H:mm:ss").format(date);
+            System.out.println(newstr);
+        }
+        catch (ParseException e)
+        {
+                //Handle exception here
+                 e.printStackTrace();
+        }
+   }
+}
+
+
+Q18.Problem statement:
+Write a Java program to count the number of days between two given years.
+Input Format
+The input consists of two integers .start year and end year.
+Output Format
+The output prints the number of days between two years and if the end year is greater than the start year then it has to print "End year must be greater than the first year !".
+Sample 1 Input
+1995
+2021
+Sample 1 Output
+Year: 1995 = 365
+Year: 1996 = 366
+Year: 1997 = 365
+Year: 1998 = 365
+Year: 1999 = 365
+Year: 2000 = 366
+Year: 2001 = 365
+Year: 2002 = 365
+Year: 2003 = 365
+Year: 2004 = 366
+Year: 2005 = 365
+Year: 2006 = 365
+Year: 2007 = 365
+Year: 2008 = 366
+Year: 2009 = 365
+Year: 2010 = 365
+Year: 2011 = 365
+Year: 2012 = 366
+Year: 2013 = 365
+Year: 2014 = 365
+Year: 2015 = 365
+Year: 2016 = 366
+Year: 2017 = 365
+Year: 2018 = 365
+Year: 2019 = 365
+Year: 2020 = 366
+Year: 2021 = 365
+Sample 2 Input
+1993
+1990
+Sample 2 Output
+End year must be greater than first year!
+
+import java.util.*;
+class main
+{
+ public static void main(String args[])
+ {
+ Scanner t=new Scanner(System.in);
+ int a=t.nextInt();
+ int b=t.nextInt();
+ if(a<b)
+ {
+ for(int i=a;i<=b;i++)
+ {
+ if(i%4==0)
+ System.out.println("Year: "+i+" = 366");
+ else
+ System.out.println("Year: "+i+" = 365");
+ }
+ }
+ else
+ {
+ System.out.println("End year must be greater than first year!");
+ }
+ }
+}
+
+Q19.Finding Next Element
+Problem Description
+Suppose you are working on a text analysis tool for a language learning app.
+The app provides a sentence in the target language, and the user must translate the sentence into their native language.
+To help users learn new vocabulary, you decide to include a feature that shows a list of all the unique words in the sentence.
+Write a Java program that prompts the user to enter a sentence, tokenizes the sentence using the 'StringTokenizer' class, and list out the words in the given sentence
+Input Format
+Input consists of String
+Output Format
+Output consists of a list of words in the given sentence from a string
+Sample 1 Input
+Let's Practice Java Tokenizer
+Sample 1 Output
+Tokens:
+Let's
+Practice
+Java
+Tokenizer
+
+import java.util.*;
+
+class TokenizerDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        
+        StringTokenizer tokenizer = new StringTokenizer(input);
+        
+        System.out.println("Tokens:");
+        while (tokenizer.hasMoreElements()) {
+            String token = (String) tokenizer.nextElement();
+            System.out.println(token);
+        }
+    }
+}
+Q20.Split the String Using White Space
+Problem Description
+A character is called a whitespace character in Java if and only if the Character.isWhitespace(char) method returns true.
+The most commonly used whitespace characters are ' ', '\t', '\n', '\r' and 'f'.
+There are several ways to split a string on whitespace characters.
+Write a Java program to split a string Wherever you come across whitespace using string tokenizer.
+Input Format
+Input consists of a string
+Output Format
+Refer the sample output
+Sample 1 Input
+Hello World
+Sample 1 Output
+[Hello, World]
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.Scanner;
+ 
+public class Main
+{
+    public static void main(String[] args)
+    {
+        String str;
+        Scanner sc = new Scanner(System.in);
+        str = sc.nextLine();
+ 
+        StringTokenizer result = new StringTokenizer(str);
+ 
+        List<String> tokens = new ArrayList<>();
+        while (result.hasMoreTokens()) {
+            tokens.add(result.nextToken());
+        }
+ 
+        System.out.println(tokens);
+    }
+}  			or 
+import java.util.StringTokenizer;
+import java.util.*;
+class main
+{
+ public static void main(String args[])
+ {
+ Scanner t=new Scanner(System.in);
+ String a=t.nextLine();
+ StringTokenizer y=new StringTokenizer(a);
+ StringBuilder x=new StringBuilder();
+ x.append("[");
+ while(y.hasMoreTokens())
+ {
+ x.append(y.nextToken());
+ if(y.hasMoreTokens())
+ {
+ x.append(", ");
+ }
+ }
+ x.append("]");
+ System.out.println(x.toString());
+ }
+}
+
+
